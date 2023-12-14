@@ -1,12 +1,28 @@
-import React from 'react'
-import Header from './screen/Header'
+import React from 'react';
 import Body from './screen/Body'
+import Browser from "./screen/Browser"
+
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
 const App = () => {
+
+
+
+
+  const appRouter = createBrowserRouter([
+    {
+      path:"/",
+      element:<Body/>
+    },
+    {
+      path:"/browser",
+      element:<Browser/>
+    }
+  ])
+
   return (
     <>
-      <Header/>
-      <Body/>
+      <RouterProvider router={appRouter}/>
     </>
   )
 }
